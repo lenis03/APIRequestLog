@@ -70,7 +70,7 @@ class BaseLoggingMixin:
         raise NotImplementedError
 
     def _get_ip_address(self, request):
-        ipaddr = request.META.get('HTTP_X_FORWARDED_FOR)', None)
+        ipaddr = request.META.get('HTTP_X_FORWARDED_FOR', None)
         if ipaddr:
             ipaddr = ipaddr.split(',')[0]
         else:
